@@ -130,7 +130,7 @@
         let minimize = document.createElement('button');
         header.appendChild(minimize);
         addStyles(minimize, {
-            background: '#444444',
+            background: '#555555',
             height: '45px',
             width: '45px',
             border: 'none',
@@ -170,7 +170,7 @@
                     name: "Auto Answer (Toggle)",
                     description: "Toggles auto answer on",
                     type: "toggle",
-                    enabled: false,
+                    enabled: true,
                     data: null,
                     run: function () {
                         if (!this.enabled) {
@@ -251,7 +251,7 @@
                             { purchaseBlookBox } = Object.values(webpack.c).find(x => x.exports.a?.purchaseBlookBox).exports.a;
         
                         axios.get("https://dashboard.blooket.com/api/users").then(async ({ data: { tokens } }) => {
-                            let prices = Object.values(webpack.c).find(x => !isNaN(x?.exports?.a?.Space)).exports.a || { Medieval: 20, Breakfast: 20, Wonderland: 20, Blizzard: 25, Space: 20, Bot: 20, Aquatic: 20, Safari: 20, Dino: 25, "Ice Monster": 25, Outback: 25 }
+                            let prices = Object.values(webpack.c).find(x => !isNaN(x?.exports?.a?.Space)).exports.a || { Medieval: 20, Breakfast: 20, Wonderland: 20, Blizzard: 0, Space: 0, Bot: 20, Aquatic: 20, Safari: 20, Dino: 25, "Ice Monster": 25, Outback: 25 }
                             let box = prompt("Which box do you want to open? (ex: \"Ice Monster\")").split(' ').map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()).join(' ');
                             if (!Object.keys(prices).map(x => x.toLowerCase()).includes(box.toLowerCase())) return alert("I couldn't find that box!");
         
